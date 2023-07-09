@@ -1,0 +1,23 @@
+---
+import type { SpotType as Props } from './spot.types'
+import dayjs from 'dayjs'
+import styles from './SpotBox.module.scss'
+
+const { spot } = Astro.props
+const spotImage = `/static/img/spots/thum-${spot.id}.jpg`
+---
+
+<div class={`box ${styles.spot_box}`}>
+  <a href={`/spots/${spot.id}/`}>
+    <div class={styles.spot_img}>
+      <img src={spotImage} alt='' />
+    </div>
+    <div class={styles.spot_content}>
+      <h2>{spot.title}</h2>
+      <dl>
+        <dt>{spot.lead}</dt>
+        <dd>{dayjs(spot.date).format('YYYY/MM/DD')}</dd>
+      </dl>
+    </div>
+  </a>
+</div>

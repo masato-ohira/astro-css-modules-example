@@ -1,0 +1,29 @@
+---
+import type { SpotType as Props } from './spot.types'
+import { md } from '@/utils/md'
+import styles from './SpotDetail.module.scss'
+
+const { spot } = Astro.props
+const spotImage = `/static/img/spots/mv-${spot.id}.jpg`
+const spotBody = md.render(spot.body as string)
+---
+
+<div>
+  <div class='container py-6'>
+    <h1 class={`title ${styles.detail_title}`}>{spot.title}</h1>
+
+    <div class={styles.detail_img}>
+      <div class='box'>
+        <img src={spotImage} alt='' />
+      </div>
+    </div>
+
+    <div class={`content ${styles.detail_content}`}>
+      <div class='c-spot-detail__content' set:html={spotBody} />
+    </div>
+
+    <div class={`buttons is-centered ${styles.detai_buttons}`}>
+      <a href='/' class='button is-medium is-rounded'>一覧に戻る</a>
+    </div>
+  </div>
+</div>

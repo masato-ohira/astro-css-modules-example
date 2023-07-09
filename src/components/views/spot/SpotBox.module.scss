@@ -1,0 +1,40 @@
+@use '@/styles/vars' as *;
+@use '@/styles/mixins/fonts';
+
+.spot_box {
+  &:not(:last-child) {
+    margin-bottom: 0;
+  }
+
+  a {
+    display: block;
+    color: $text;
+  }
+
+  &:hover {
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+    background-color: #eee;
+  }
+}
+
+.spot_img {
+  img {
+    object-fit: cover;
+    aspect-ratio: 16/9;
+    display: block;
+  }
+}
+
+.spot_content {
+  margin-top: 15px;
+  h2 {
+    font-weight: bold;
+  }
+
+  dl {
+    margin-top: 5px;
+    @include fonts.rem(14);
+  }
+}

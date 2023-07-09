@@ -1,0 +1,16 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import SpotList from '@/components/views/spot/SpotList.astro'
+
+const meta = {
+  title: 'DemoSite',
+}
+---
+
+<Layout meta={meta}>
+  <main>
+    <div class='container py-6'>
+      <SpotList />
+    </div>
+  </main>
+</Layout>

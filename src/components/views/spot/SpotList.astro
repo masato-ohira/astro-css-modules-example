@@ -1,0 +1,13 @@
+---
+import spots from '@/json/spots.json'
+import SpotBox from './SpotBox.astro'
+import styles from './SpotList.module.scss'
+---
+
+<div class={styles.list}>
+  {
+    spots.map((spot) => {
+      return <SpotBox spot={spot} />
+    })
+  }
+</div>
