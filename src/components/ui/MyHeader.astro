@@ -1,12 +1,13 @@
 ---
 import { MyIcon } from '@/components/icons/MyIcon'
+import styles from './MyHeader.module.scss'
 ---
 
-<div class='c-my-header'>
+<div class={styles.header}>
   <div class='hero is-small'>
-    <div class='hero-body'>
-      <div class='c-my-header__logo'>
-        <div class='logo-icon'>
+    <div class={`hero-body ${styles.header_body}`}>
+      <div class={styles.header_logo}>
+        <div class={styles.header_icon}>
           <MyIcon name={'react'} />
         </div>
         <h1>
@@ -14,13 +15,9 @@ import { MyIcon } from '@/components/icons/MyIcon'
         </h1>
       </div>
 
-      <div class='c-my-header__menu'>
+      <div class={styles.header_menu}>
         <MyIcon name={'menu'} />
       </div>
     </div>
   </div>
-
-  <style lang='scss'>
-    @import './MyHeader.scss';
-  </style>
 </div>

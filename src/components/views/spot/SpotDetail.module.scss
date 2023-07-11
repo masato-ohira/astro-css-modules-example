@@ -23,7 +23,7 @@
 
 .detail_content {
   h2 {
-    color: $link !important;
+    color: $link;
     @include fonts.rem(24);
     font-weight: 500;
     margin-top: 30px;
